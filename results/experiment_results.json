@@ -1,0 +1,271 @@
+[
+  {
+    "n_tasks": 4,
+    "n_models": 3,
+    "budget": 5.0,
+    "results": {
+      "greedy": {
+        "method": "Greedy (Production)",
+        "total_cost": 14.223,
+        "quality_satisfied": 0.75,
+        "budget_satisfied": false,
+        "solve_time_ms": 0.019073486328125,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "sonnet"
+        },
+        "extra": {}
+      },
+      "sa": {
+        "method": "Simulated Annealing",
+        "total_cost": 6.228000000000001,
+        "quality_satisfied": 0.5,
+        "budget_satisfied": false,
+        "solve_time_ms": 328.3119201660156,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "gemma2-2b"
+        },
+        "extra": {
+          "n_iterations": 2000,
+          "qubo_cost": 321.30784
+        }
+      },
+      "brute_force": {
+        "method": "Brute Force (Optimal)",
+        "total_cost": 6.228000000000001,
+        "quality_satisfied": 0.5,
+        "budget_satisfied": false,
+        "solve_time_ms": 9.968042373657227,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "gemma2-2b"
+        },
+        "extra": {
+          "total_combinations": 81,
+          "qubo_cost": 321.30784
+        }
+      },
+      "qaoa": {
+        "method": "QAOA(p=2)",
+        "total_cost": 0.24,
+        "quality_satisfied": 0.25,
+        "budget_satisfied": true,
+        "solve_time_ms": 13185.481071472168,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "UNASSIGNED",
+          "T-002": "UNASSIGNED",
+          "T-003": "UNASSIGNED"
+        },
+        "extra": {
+          "qubit_count": 12,
+          "circuit_depth": 12,
+          "optimal_params": [
+            2.499098079977948,
+            2.128186875687712,
+            3.4414596975002607,
+            2.209805384494179
+          ],
+          "qubo_cost": 60.24,
+          "n_restarts": 3,
+          "n_shots": 500
+        }
+      }
+    }
+  },
+  {
+    "n_tasks": 8,
+    "n_models": 4,
+    "budget": 20.0,
+    "results": {
+      "greedy": {
+        "method": "Greedy (Production)",
+        "total_cost": 97.56299999999999,
+        "quality_satisfied": 1.0,
+        "budget_satisfied": false,
+        "solve_time_ms": 0.015974044799804688,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "opus",
+          "T-003": "sonnet",
+          "T-004": "opus",
+          "T-005": "gemma2-2b",
+          "T-006": "gemma2-2b",
+          "T-007": "gemma2-2b"
+        },
+        "extra": {}
+      },
+      "sa": {
+        "method": "Simulated Annealing",
+        "total_cost": 14.223,
+        "quality_satisfied": 0.75,
+        "budget_satisfied": true,
+        "solve_time_ms": 482.9254150390625,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "sonnet",
+          "T-004": "gemma2-2b",
+          "T-005": "gemma2-2b",
+          "T-006": "gemma2-2b",
+          "T-007": "gemma2-2b"
+        },
+        "extra": {
+          "n_iterations": 2000,
+          "qubo_cost": 314.223
+        }
+      },
+      "brute_force": {
+        "method": "Brute Force (Optimal)",
+        "total_cost": 14.223,
+        "quality_satisfied": 0.75,
+        "budget_satisfied": true,
+        "solve_time_ms": 13801.883697509766,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "sonnet",
+          "T-004": "gemma2-2b",
+          "T-005": "gemma2-2b",
+          "T-006": "gemma2-2b",
+          "T-007": "gemma2-2b"
+        },
+        "extra": {
+          "total_combinations": 65536,
+          "qubo_cost": 314.223
+        }
+      },
+      "qaoa": {
+        "method": "QAOA(p=2)",
+        "total_cost": 9.08325,
+        "quality_satisfied": 0.5,
+        "budget_satisfied": true,
+        "solve_time_ms": 22273.357629776,
+        "assignments": {
+          "T-000": "gemma2-2b",
+          "T-001": "gemma2-2b",
+          "T-002": "UNASSIGNED",
+          "T-003": "sonnet",
+          "T-004": "haiku",
+          "T-005": "haiku",
+          "T-006": "haiku",
+          "T-007": "gemma2-2b"
+        },
+        "extra": {
+          "qubit_count": 32,
+          "circuit_depth": 16,
+          "optimal_params": [
+            1.1286238166369431,
+            0.16438886659330237,
+            3.1170976974017712,
+            2.5215154732680314
+          ],
+          "qubo_cost": 712.41225,
+          "n_restarts": 3,
+          "n_shots": 500
+        }
+      }
+    }
+  },
+  {
+    "n_tasks": 6,
+    "n_models": 5,
+    "budget": 50.0,
+    "results": {
+      "greedy": {
+        "method": "Greedy (Production)",
+        "total_cost": 97.56299999999999,
+        "quality_satisfied": 1.0,
+        "budget_satisfied": false,
+        "solve_time_ms": 0.01430511474609375,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "opus",
+          "T-003": "sonnet",
+          "T-004": "opus",
+          "T-005": "gemma2-2b"
+        },
+        "extra": {}
+      },
+      "sa": {
+        "method": "Simulated Annealing",
+        "total_cost": 39.708,
+        "quality_satisfied": 0.8333333333333334,
+        "budget_satisfied": true,
+        "solve_time_ms": 405.778169631958,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "opus",
+          "T-003": "sonnet",
+          "T-004": "gemma2-2b",
+          "T-005": "gemma2-2b"
+        },
+        "extra": {
+          "n_iterations": 2000,
+          "qubo_cost": 189.708
+        }
+      },
+      "brute_force": {
+        "method": "Brute Force (Optimal)",
+        "total_cost": 39.708,
+        "quality_satisfied": 0.8333333333333334,
+        "budget_satisfied": true,
+        "solve_time_ms": 3883.5740089416504,
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "opus",
+          "T-003": "sonnet",
+          "T-004": "gemma2-2b",
+          "T-005": "gemma2-2b"
+        },
+        "extra": {
+          "total_combinations": 15625,
+          "qubo_cost": 189.708
+        }
+      },
+      "qaoa": {
+        "method": "QAOA(p=3)",
+        "total_cost": 33.050000000000004,
+        "quality_satisfied": 0.5,
+        "budget_satisfied": true,
+        "solve_time_ms": 30161.704301834106,
+        "assignments": {
+          "T-000": "opus",
+          "T-001": "sonnet",
+          "T-002": "haiku",
+          "T-003": "haiku",
+          "T-004": "sonnet",
+          "T-005": "gemma2-2b"
+        },
+        "extra": {
+          "qubit_count": 30,
+          "circuit_depth": 29,
+          "optimal_params": [
+            2.3509537341491162,
+            0.8494705005714633,
+            2.884204119716451,
+            0.8324608329634577,
+            2.849946088805363,
+            3.0469267632830244
+          ],
+          "qubo_cost": 509.53,
+          "n_restarts": 3,
+          "n_shots": 500
+        }
+      }
+    }
+  }
+]

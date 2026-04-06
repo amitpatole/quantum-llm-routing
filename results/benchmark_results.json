@@ -1,0 +1,222 @@
+{
+  "penalty": [
+    {
+      "lambda_quality": 5,
+      "cost": 14.223,
+      "quality": 0.75,
+      "method": "QAOA-v2(p=2)"
+    },
+    {
+      "lambda_quality": 10,
+      "cost": 14.223,
+      "quality": 0.75,
+      "method": "QAOA-v2(p=2)"
+    },
+    {
+      "lambda_quality": 20,
+      "cost": 14.223,
+      "quality": 0.75,
+      "method": "QAOA-v2(p=2)"
+    },
+    {
+      "lambda_quality": 40,
+      "cost": 14.223,
+      "quality": 0.75,
+      "method": "QAOA-v2(p=2)"
+    },
+    {
+      "lambda_quality": 80,
+      "cost": 14.223,
+      "quality": 0.75,
+      "method": "QAOA-v2(p=2)"
+    }
+  ],
+  "depth": [
+    {
+      "p": 1,
+      "cost": 14.223,
+      "quality": 0.75,
+      "time_ms": 12894.885063171387,
+      "qubo_cost": 68.79173266679175
+    },
+    {
+      "p": 2,
+      "cost": 14.223,
+      "quality": 0.75,
+      "time_ms": 13748.759269714355,
+      "qubo_cost": 68.79173266679175
+    },
+    {
+      "p": 3,
+      "cost": 14.223,
+      "quality": 0.75,
+      "time_ms": 21833.16135406494,
+      "qubo_cost": 68.79173266679175
+    },
+    {
+      "p": 4,
+      "cost": 14.223,
+      "quality": 0.75,
+      "time_ms": 23178.739547729492,
+      "qubo_cost": 68.79173266679175
+    }
+  ],
+  "scaling": [
+    {
+      "n_tasks": 2,
+      "n_qubits": 6,
+      "greedy_cost": 6.228000000000001,
+      "greedy_quality": 1.0,
+      "greedy_time": 0.018596649169921875,
+      "sa_cost": 6.228000000000001,
+      "sa_quality": 1.0,
+      "sa_time": 291.5334701538086,
+      "qaoa_cost": 6.228000000000001,
+      "qaoa_quality": 1.0,
+      "qaoa_time": 10697.794675827026,
+      "optimal_cost": 6.228000000000001,
+      "optimal_quality": 1.0,
+      "optimal_time": 0.9222030639648438
+    },
+    {
+      "n_tasks": 4,
+      "n_qubits": 12,
+      "greedy_cost": 14.223,
+      "greedy_quality": 0.75,
+      "greedy_time": 0.015020370483398438,
+      "sa_cost": 14.223,
+      "sa_quality": 0.75,
+      "sa_time": 337.01157569885254,
+      "qaoa_cost": 14.223,
+      "qaoa_quality": 0.75,
+      "qaoa_time": 15567.175388336182,
+      "optimal_cost": 14.223,
+      "optimal_quality": 0.75,
+      "optimal_time": 18.511295318603516
+    },
+    {
+      "n_tasks": 6,
+      "n_qubits": 18,
+      "greedy_cost": 14.223,
+      "greedy_quality": 0.6666666666666666,
+      "greedy_time": 0.03147125244140625,
+      "sa_cost": 14.223,
+      "sa_quality": 0.6666666666666666,
+      "sa_time": 399.721622467041,
+      "qaoa_cost": 14.223,
+      "qaoa_quality": 0.6666666666666666,
+      "qaoa_time": 17204.214096069336,
+      "optimal_cost": 14.223,
+      "optimal_quality": 0.6666666666666666,
+      "optimal_time": 104.77352142333984
+    },
+    {
+      "n_tasks": 8,
+      "n_qubits": 24,
+      "greedy_cost": 14.223,
+      "greedy_quality": 0.75,
+      "greedy_time": 0.026226043701171875,
+      "sa_cost": 14.223,
+      "sa_quality": 0.75,
+      "sa_time": 419.9638366699219,
+      "qaoa_cost": 17.739,
+      "qaoa_quality": 0.75,
+      "qaoa_time": 19685.12773513794,
+      "optimal_cost": 14.223,
+      "optimal_quality": 0.75,
+      "optimal_time": 1593.5053825378418
+    }
+  ],
+  "pareto": {
+    "greedy": [
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ]
+    ],
+    "sa": [
+      [
+        0.24,
+        0.25
+      ],
+      [
+        0.24,
+        0.25
+      ],
+      [
+        0.24,
+        0.25
+      ],
+      [
+        6.228000000000001,
+        0.5
+      ],
+      [
+        8.235,
+        0.5
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ]
+    ],
+    "qaoa": [
+      [
+        0.24,
+        0.25
+      ],
+      [
+        0.24,
+        0.25
+      ],
+      [
+        6.228000000000001,
+        0.5
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ],
+      [
+        14.223,
+        0.75
+      ]
+    ]
+  }
+}
