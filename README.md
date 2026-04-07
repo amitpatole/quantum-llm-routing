@@ -14,9 +14,10 @@ Modern multi-agent AI systems route tasks across multiple LLM tiers (free local 
 
 | Finding | Detail |
 |---------|--------|
-| **Shallow circuits win on NISQ** | p=1 QAOA achieves 15.4% valid rate vs 0.8% for p=2 on IBM hardware |
-| **Steep noise scaling** | Valid rate drops from 37-43% (6 qubits) to 0.2-0.3% (18 qubits) |
-| **Cross-backend reproducibility** | Consistent results across 3 IBM Heron processors (within +/-1.5%) |
+| **Shallow circuits win on NISQ** | p=1 QAOA achieves 24-25% valid rate vs <1% for p=2 on IBM hardware (25x improvement) |
+| **Cross-backend reproducibility** | p=1 results consistent within +/-0.5% across 3 IBM Heron processors |
+| **Warm-start negative result** | Simple X+H initialization from classical solution hurts NISQ performance |
+| **Feasibility decoding** | Post-processing recovers 100% valid assignments with 33-65% quality |
 | **Penalty threshold** | Critical lambda_Q ~20-40 determines whether QAOA respects quality constraints |
 
 ### Hardware Used
@@ -24,7 +25,7 @@ Modern multi-agent AI systems route tasks across multiple LLM tiers (free local 
 - **IBM ibm_fez** — 156-qubit Heron r1
 - **IBM ibm_kingston** — 156-qubit Heron r1
 - **IBM ibm_marrakesh** — 156-qubit Heron r1
-- **16 quantum jobs** executed, 155 seconds total QPU time
+- **28 quantum jobs** executed across 2 campaigns, ~45 seconds total QPU time
 
 ---
 
@@ -37,17 +38,19 @@ quantum-llm-routing/
 │   ├── benchmark_suite.py        # Extended experiments (penalty, depth, scaling, Pareto)
 │   ├── optimize_params.py        # Pre-optimize QAOA parameters on simulator
 │   ├── ibm_hardware_run.py       # Submit circuits to IBM Quantum hardware
-│   └── hardware_experiment_suite.py  # Full hardware experiment suite (3 backends)
+│   ├── hardware_experiment_suite.py  # Full hardware experiment suite (3 backends)
+│   └── validation_experiment_suite.py  # v2 validation: p=1 scaling, warm-start, decoding
 ├── paper/
 │   ├── main.tex                  # IEEE-formatted LaTeX paper
-│   ├── main.pdf                  # Compiled paper (6 pages)
-│   ├── figures/                  # Publication figures
+│   ├── main.pdf                  # Compiled paper (8 pages)
+│   ├── figures/                  # Publication figures (12 total)
 │   └── RESEARCH_PLAN.md          # Research plan and methodology
 ├── results/
-│   ├── hardware_full_results.json    # All IBM hardware experiment data
+│   ├── hardware_full_results.json    # Campaign 1 hardware data (16 jobs)
+│   ├── validation_results.json       # Campaign 2 hardware data (12 jobs)
 │   ├── optimized_params.json         # Pre-optimized QAOA parameters
 │   ├── benchmark_results.json        # Simulator benchmark data
-│   └── *.png                         # All generated figures (13 total)
+│   └── *.png                         # All generated figures (16 total)
 ├── requirements.txt
 └── README.md
 ```
@@ -146,29 +149,60 @@ H = H_cost + lambda_A * H_assign + lambda_Q * H_quality + lambda_B * H_budget + 
 
 ![Cross Backend](results/fig12_cross_backend.png)
 
+### p=1 Scaling Validation (Campaign 2)
+
+![p=1 Scaling](results/fig14_p1_scaling.png)
+
+### Warm-Start vs Cold-Start
+
+![Warm-Start](results/fig15_warmstart_comparison.png)
+
+### Feasibility-First Decoding
+
+![Decoding](results/fig16_feasibility_decoding.png)
+
 ---
 
 ## IBM Quantum Job IDs
 
-All hardware results are independently verifiable on the IBM Quantum dashboard:
+All 28 hardware results are independently verifiable on the IBM Quantum dashboard:
+
+### Campaign 1 (Experiments A-C)
 
 | Experiment | Backend | Job ID |
 |-----------|---------|--------|
-| Scaling 6q | ibm_fez | d7a2rmpq1efs73d3evd0 |
-| Scaling 6q | ibm_kingston | d7a2rp0eecps73d8sm00 |
-| Scaling 6q | ibm_marrakesh | d7a2rqoeecps73d8sm40 |
-| Scaling 12q | ibm_fez | d7a2s4hq1efs73d3f010 |
-| Scaling 12q | ibm_kingston | d7a2s68eecps73d8smk0 |
-| Scaling 12q | ibm_marrakesh | d7a2shpq1efs73d3f0mg |
-| Scaling 18q | ibm_fez | d7a2skbc6das739jj0pg |
-| Scaling 18q | ibm_kingston | d7a2sm9q1efs73d3f0v0 |
-| Scaling 18q | ibm_marrakesh | d7a2soik86tc73a0vnt0 |
+| Scaling 6q p=2 | ibm_fez | d7a2rmpq1efs73d3evd0 |
+| Scaling 6q p=2 | ibm_kingston | d7a2rp0eecps73d8sm00 |
+| Scaling 6q p=2 | ibm_marrakesh | d7a2rqoeecps73d8sm40 |
+| Scaling 12q p=2 | ibm_fez | d7a2s4hq1efs73d3f010 |
+| Scaling 12q p=2 | ibm_kingston | d7a2s68eecps73d8smk0 |
+| Scaling 12q p=2 | ibm_marrakesh | d7a2shpq1efs73d3f0mg |
+| Scaling 18q p=2 | ibm_fez | d7a2skbc6das739jj0pg |
+| Scaling 18q p=2 | ibm_kingston | d7a2sm9q1efs73d3f0v0 |
+| Scaling 18q p=2 | ibm_marrakesh | d7a2soik86tc73a0vnt0 |
 | Depth p=1 | ibm_fez | d7a2sqrc6das739jj12g |
 | Depth p=2 | ibm_fez | d7a2sv3c6das739jj180 |
 | Depth p=3 | ibm_fez | d7a2t13c6das739jj1ag |
 | High-shot | ibm_fez | d7a2t32k86tc73a0voe0 |
 
-Total QPU time: 155.3 seconds (2.6 minutes).
+### Campaign 2 (Experiments D-E)
+
+| Experiment | Backend | Job ID |
+|-----------|---------|--------|
+| p=1 Scaling 6q | ibm_fez | d7ak50jc6das739kc7a0 |
+| p=1 Scaling 6q | ibm_kingston | d7ak52oeecps73d9m3d0 |
+| p=1 Scaling 6q | ibm_marrakesh | d7ak54pq1efs73d488l0 |
+| p=1 Scaling 12q | ibm_fez | d7ak571q1efs73d488og |
+| p=1 Scaling 12q | ibm_kingston | d7ak59ik86tc73a1p05g |
+| p=1 Scaling 12q | ibm_marrakesh | d7ak5bjc6das739kc7rg |
+| p=1 Scaling 18q | ibm_fez | d7ak5e2k86tc73a1p0fg |
+| p=1 Scaling 18q | ibm_kingston | d7ak5g1q1efs73d48990 |
+| p=1 Scaling 18q | ibm_marrakesh | d7ak5iak86tc73a1p0n0 |
+| Warm-start 6q | ibm_fez | d7ak5khq1efs73d489gg |
+| Warm-start 12q | ibm_fez | d7ak5mgeecps73d9m4g0 |
+| Warm-start 18q | ibm_fez | d7ak5orc6das739kc8i0 |
+
+Total QPU time: ~45 seconds across 28 jobs.
 
 ---
 

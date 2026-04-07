@@ -1,0 +1,815 @@
+{
+  "metadata": {
+    "timestamp": "2026-04-07T17:46:31.209828",
+    "n_shots": 4000,
+    "backends": [
+      "ibm_fez",
+      "ibm_kingston",
+      "ibm_marrakesh"
+    ],
+    "qpu_budget": {
+      "total_qpu_seconds": 36.0,
+      "budget_seconds": 555.0,
+      "utilization_pct": 6.5,
+      "n_jobs": 12,
+      "jobs": [
+        {
+          "label": "D_6q_ibm_fez",
+          "wall_time": 5.995711803436279,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "D_6q_ibm_kingston",
+          "wall_time": 5.664485454559326,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "D_6q_ibm_marrakesh",
+          "wall_time": 5.979874849319458,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "D_12q_ibm_fez",
+          "wall_time": 7.317084074020386,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "D_12q_ibm_kingston",
+          "wall_time": 6.418993234634399,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "D_12q_ibm_marrakesh",
+          "wall_time": 5.708127737045288,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "D_18q_ibm_fez",
+          "wall_time": 5.677907466888428,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "D_18q_ibm_kingston",
+          "wall_time": 5.958366870880127,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "D_18q_ibm_marrakesh",
+          "wall_time": 5.77347993850708,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "E_6q_warmstart",
+          "wall_time": 5.761786222457886,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "E_12q_warmstart",
+          "wall_time": 5.385691404342651,
+          "est_qpu": 3.0
+        },
+        {
+          "label": "E_18q_warmstart",
+          "wall_time": 7.660097599029541,
+          "est_qpu": 3.0
+        }
+      ]
+    },
+    "paper_version": "v2",
+    "extends": "hardware_full_results.json (v1)"
+  },
+  "experiment_d": {
+    "p1_scaling_6q": {
+      "config": {
+        "n_tasks": 2,
+        "n_models": 3,
+        "p": 1,
+        "qubits": 6,
+        "budget": 5.0
+      },
+      "params": {
+        "gammas": [
+          3.1393781574628346
+        ],
+        "betas": [
+          2.345327262711986
+        ]
+      },
+      "classical": {
+        "greedy": {
+          "cost": 6.228000000000001,
+          "quality": 1.0
+        }
+      },
+      "simulator": {
+        "n_shots": 4000,
+        "valid_count": 943,
+        "valid_rate": 0.23575,
+        "mean_cost": 3.4910507500000003,
+        "std_cost": 3.1767642158609193,
+        "mean_quality": 0.63025,
+        "best_valid_cost": 0.24,
+        "best_valid_quality": 0.5,
+        "best_assignment": {
+          "T-000": "haiku",
+          "T-001": "gemma2-2b"
+        }
+      },
+      "hardware": {
+        "ibm_fez": {
+          "n_shots": 4000,
+          "valid_count": 966,
+          "valid_rate": 0.2415,
+          "mean_cost": 0.27303600000000006,
+          "std_cost": 0.6596816358699096,
+          "mean_quality": 0.260625,
+          "best_valid_cost": 0.0,
+          "best_valid_quality": 0.0,
+          "best_assignment": {
+            "T-000": "gemma2-2b",
+            "T-001": "gemma2-2b"
+          },
+          "transpiled_depth": 54,
+          "gate_counts": {
+            "rz": 76,
+            "sx": 48,
+            "cz": 24,
+            "x": 12,
+            "measure": 6
+          },
+          "job_id": "d7ak50jc6das739kc7a0"
+        },
+        "ibm_kingston": {
+          "n_shots": 4000,
+          "valid_count": 1027,
+          "valid_rate": 0.25675,
+          "mean_cost": 0.30616150000000003,
+          "std_cost": 0.6688255717432985,
+          "mean_quality": 0.270875,
+          "best_valid_cost": 0.0,
+          "best_valid_quality": 0.0,
+          "best_assignment": {
+            "T-000": "gemma2-2b",
+            "T-001": "gemma2-2b"
+          },
+          "transpiled_depth": 54,
+          "gate_counts": {
+            "rz": 76,
+            "sx": 48,
+            "cz": 24,
+            "x": 12,
+            "measure": 6
+          },
+          "job_id": "d7ak52oeecps73d9m3d0"
+        },
+        "ibm_marrakesh": {
+          "n_shots": 4000,
+          "valid_count": 1021,
+          "valid_rate": 0.25525,
+          "mean_cost": 0.29737300000000005,
+          "std_cost": 0.7275268076648448,
+          "mean_quality": 0.270875,
+          "best_valid_cost": 0.0,
+          "best_valid_quality": 0.0,
+          "best_assignment": {
+            "T-000": "gemma2-2b",
+            "T-001": "gemma2-2b"
+          },
+          "transpiled_depth": 54,
+          "gate_counts": {
+            "rz": 76,
+            "sx": 48,
+            "cz": 24,
+            "x": 12,
+            "measure": 6
+          },
+          "job_id": "d7ak54pq1efs73d488l0"
+        }
+      }
+    },
+    "p1_scaling_12q": {
+      "config": {
+        "n_tasks": 4,
+        "n_models": 3,
+        "p": 1,
+        "qubits": 12,
+        "budget": 10.0
+      },
+      "params": {
+        "gammas": [
+          1.1641269726600392
+        ],
+        "betas": [
+          0.7986453905641042
+        ]
+      },
+      "classical": {
+        "greedy": {
+          "cost": 14.223,
+          "quality": 0.75
+        }
+      },
+      "simulator": {
+        "n_shots": 4000,
+        "valid_count": 0,
+        "valid_rate": 0.0,
+        "mean_cost": 3.2588253750000002,
+        "std_cost": 3.7172849506486063,
+        "mean_quality": 0.1668125,
+        "best_valid_cost": null,
+        "best_valid_quality": 0,
+        "best_assignment": null
+      },
+      "hardware": {
+        "ibm_fez": {
+          "n_shots": 4000,
+          "valid_count": 993,
+          "valid_rate": 0.24825,
+          "mean_cost": 1.5932629375,
+          "std_cost": 1.6106439661683445,
+          "mean_quality": 0.213625,
+          "best_valid_cost": 0.66475,
+          "best_valid_quality": 0.25,
+          "best_assignment": {
+            "T-000": "haiku",
+            "T-001": "gemma2-2b",
+            "T-002": "haiku",
+            "T-003": "gemma2-2b"
+          },
+          "transpiled_depth": 52,
+          "gate_counts": {
+            "rz": 140,
+            "sx": 92,
+            "cz": 48,
+            "x": 24,
+            "measure": 12
+          },
+          "job_id": "d7ak571q1efs73d488og"
+        },
+        "ibm_kingston": {
+          "n_shots": 4000,
+          "valid_count": 995,
+          "valid_rate": 0.24875,
+          "mean_cost": 1.4227435624999998,
+          "std_cost": 1.1671496898316787,
+          "mean_quality": 0.2113125,
+          "best_valid_cost": 0.66475,
+          "best_valid_quality": 0.25,
+          "best_assignment": {
+            "T-000": "haiku",
+            "T-001": "gemma2-2b",
+            "T-002": "haiku",
+            "T-003": "gemma2-2b"
+          },
+          "transpiled_depth": 52,
+          "gate_counts": {
+            "rz": 146,
+            "sx": 96,
+            "cz": 48,
+            "x": 24,
+            "measure": 12
+          },
+          "job_id": "d7ak59ik86tc73a1p05g"
+        },
+        "ibm_marrakesh": {
+          "n_shots": 4000,
+          "valid_count": 957,
+          "valid_rate": 0.23925,
+          "mean_cost": 1.537013375,
+          "std_cost": 1.4975045936310545,
+          "mean_quality": 0.2201875,
+          "best_valid_cost": 0.66475,
+          "best_valid_quality": 0.25,
+          "best_assignment": {
+            "T-000": "haiku",
+            "T-001": "gemma2-2b",
+            "T-002": "haiku",
+            "T-003": "gemma2-2b"
+          },
+          "transpiled_depth": 52,
+          "gate_counts": {
+            "rz": 144,
+            "sx": 94,
+            "cz": 48,
+            "x": 24,
+            "measure": 12
+          },
+          "job_id": "d7ak5bjc6das739kc7rg"
+        }
+      }
+    },
+    "p1_scaling_18q": {
+      "config": {
+        "n_tasks": 6,
+        "n_models": 3,
+        "p": 1,
+        "qubits": 18,
+        "budget": 15.0
+      },
+      "params": {
+        "gammas": [
+          3.2337357362763264
+        ],
+        "betas": [
+          2.309510364665728
+        ]
+      },
+      "classical": {
+        "greedy": {
+          "cost": 14.223,
+          "quality": 0.6666666666666666
+        }
+      },
+      "simulator": {
+        "n_shots": 4000,
+        "valid_count": 0,
+        "valid_rate": 0.0,
+        "mean_cost": 8.486307875000001,
+        "std_cost": 3.7054257222299007,
+        "mean_quality": 0.3714166666666666,
+        "best_valid_cost": null,
+        "best_valid_quality": 0,
+        "best_assignment": null
+      },
+      "hardware": {
+        "ibm_fez": {
+          "n_shots": 4000,
+          "valid_count": 37,
+          "valid_rate": 0.00925,
+          "mean_cost": 2.1723035,
+          "std_cost": 2.01848676678849,
+          "mean_quality": 0.22004166666666664,
+          "best_valid_cost": 1.59,
+          "best_valid_quality": 0.16666666666666666,
+          "best_assignment": {
+            "T-000": "gemma2-2b",
+            "T-001": "haiku",
+            "T-002": "haiku",
+            "T-003": "haiku",
+            "T-004": "gemma2-2b",
+            "T-005": "gemma2-2b"
+          },
+          "transpiled_depth": 52,
+          "gate_counts": {
+            "rz": 219,
+            "sx": 144,
+            "cz": 72,
+            "x": 36,
+            "measure": 18
+          },
+          "job_id": "d7ak5e2k86tc73a1p0fg"
+        },
+        "ibm_kingston": {
+          "n_shots": 4000,
+          "valid_count": 54,
+          "valid_rate": 0.0135,
+          "mean_cost": 2.0772378125000004,
+          "std_cost": 1.8127949517573934,
+          "mean_quality": 0.21833333333333332,
+          "best_valid_cost": 1.59,
+          "best_valid_quality": 0.16666666666666666,
+          "best_assignment": {
+            "T-000": "gemma2-2b",
+            "T-001": "haiku",
+            "T-002": "haiku",
+            "T-003": "haiku",
+            "T-004": "gemma2-2b",
+            "T-005": "gemma2-2b"
+          },
+          "transpiled_depth": 50,
+          "gate_counts": {
+            "rz": 210,
+            "sx": 136,
+            "cz": 72,
+            "x": 36,
+            "measure": 18
+          },
+          "job_id": "d7ak5g1q1efs73d48990"
+        },
+        "ibm_marrakesh": {
+          "n_shots": 4000,
+          "valid_count": 39,
+          "valid_rate": 0.00975,
+          "mean_cost": 2.00223575,
+          "std_cost": 1.8033249917816914,
+          "mean_quality": 0.21766666666666662,
+          "best_valid_cost": 1.331,
+          "best_valid_quality": 0.3333333333333333,
+          "best_assignment": {
+            "T-000": "haiku",
+            "T-001": "gemma2-2b",
+            "T-002": "haiku",
+            "T-003": "haiku",
+            "T-004": "gemma2-2b",
+            "T-005": "gemma2-2b"
+          },
+          "transpiled_depth": 52,
+          "gate_counts": {
+            "rz": 209,
+            "sx": 136,
+            "cz": 72,
+            "x": 36,
+            "measure": 18
+          },
+          "job_id": "d7ak5iak86tc73a1p0n0"
+        }
+      }
+    }
+  },
+  "experiment_e": {
+    "warmstart_6q": {
+      "config": {
+        "n_tasks": 2,
+        "n_models": 3,
+        "p": 1,
+        "qubits": 6,
+        "budget": 5.0,
+        "init": "warm-start"
+      },
+      "params": {
+        "gammas": [
+          3.1393781574628346
+        ],
+        "betas": [
+          2.345327262711986
+        ]
+      },
+      "greedy_solution": {
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet"
+        },
+        "cost": 6.228000000000001,
+        "quality": 1.0,
+        "target_bits": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "simulator": {
+        "n_shots": 4000,
+        "valid_count": 985,
+        "valid_rate": 0.24625,
+        "mean_cost": 3.8189692500000003,
+        "std_cost": 3.2429120290727034,
+        "mean_quality": 0.573375,
+        "best_valid_cost": 0.24,
+        "best_valid_quality": 0.5,
+        "best_assignment": {
+          "T-000": "haiku",
+          "T-001": "gemma2-2b"
+        }
+      },
+      "hardware": {
+        "ibm_fez": {
+          "n_shots": 4000,
+          "valid_count": 958,
+          "valid_rate": 0.2395,
+          "mean_cost": 0.32132325,
+          "std_cost": 0.594278500165905,
+          "mean_quality": 0.2505,
+          "best_valid_cost": 0.0,
+          "best_valid_quality": 0.0,
+          "best_assignment": {
+            "T-000": "gemma2-2b",
+            "T-001": "gemma2-2b"
+          },
+          "transpiled_depth": 54,
+          "gate_counts": {
+            "rz": 73,
+            "sx": 46,
+            "cz": 24,
+            "x": 12,
+            "measure": 6
+          },
+          "job_id": "d7ak5khq1efs73d489gg"
+        }
+      }
+    },
+    "warmstart_12q": {
+      "config": {
+        "n_tasks": 4,
+        "n_models": 3,
+        "p": 1,
+        "qubits": 12,
+        "budget": 10.0,
+        "init": "warm-start"
+      },
+      "params": {
+        "gammas": [
+          1.1641269726600392
+        ],
+        "betas": [
+          0.7986453905641042
+        ]
+      },
+      "greedy_solution": {
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "sonnet"
+        },
+        "cost": 14.223,
+        "quality": 0.75,
+        "target_bits": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "simulator": {
+        "n_shots": 4000,
+        "valid_count": 1084,
+        "valid_rate": 0.271,
+        "mean_cost": 12.850556437500003,
+        "std_cost": 3.2027395792634206,
+        "mean_quality": 0.5981875,
+        "best_valid_cost": 6.228000000000001,
+        "best_valid_quality": 0.5,
+        "best_assignment": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "gemma2-2b"
+        }
+      },
+      "hardware": {
+        "ibm_fez": {
+          "n_shots": 4000,
+          "valid_count": 1,
+          "valid_rate": 0.00025,
+          "mean_cost": 0.979708625,
+          "std_cost": 1.5768831747927174,
+          "mean_quality": 0.054,
+          "best_valid_cost": 1.16375,
+          "best_valid_quality": 0.25,
+          "best_assignment": {
+            "T-000": "haiku",
+            "T-001": "haiku",
+            "T-002": "haiku",
+            "T-003": "gemma2-2b"
+          },
+          "transpiled_depth": 52,
+          "gate_counts": {
+            "rz": 141,
+            "sx": 92,
+            "cz": 48,
+            "x": 24,
+            "measure": 12
+          },
+          "job_id": "d7ak5mgeecps73d9m4g0"
+        }
+      }
+    },
+    "warmstart_18q": {
+      "config": {
+        "n_tasks": 6,
+        "n_models": 3,
+        "p": 1,
+        "qubits": 18,
+        "budget": 15.0,
+        "init": "warm-start"
+      },
+      "params": {
+        "gammas": [
+          3.2337357362763264
+        ],
+        "betas": [
+          2.309510364665728
+        ]
+      },
+      "greedy_solution": {
+        "assignments": {
+          "T-000": "haiku",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "sonnet",
+          "T-004": "gemma2-2b",
+          "T-005": "gemma2-2b"
+        },
+        "cost": 14.223,
+        "quality": 0.6666666666666666,
+        "target_bits": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      "simulator": {
+        "n_shots": 4000,
+        "valid_count": 23,
+        "valid_rate": 0.00575,
+        "mean_cost": 12.8934120625,
+        "std_cost": 3.9628333307040395,
+        "mean_quality": 0.56425,
+        "best_valid_cost": 9.192,
+        "best_valid_quality": 0.5,
+        "best_assignment": {
+          "T-000": "sonnet",
+          "T-001": "sonnet",
+          "T-002": "gemma2-2b",
+          "T-003": "gemma2-2b",
+          "T-004": "gemma2-2b",
+          "T-005": "sonnet"
+        }
+      },
+      "hardware": {
+        "ibm_fez": {
+          "n_shots": 4000,
+          "valid_count": 0,
+          "valid_rate": 0.0,
+          "mean_cost": 2.0437124375,
+          "std_cost": 2.4216696577681036,
+          "mean_quality": 0.23620833333333333,
+          "best_valid_cost": null,
+          "best_valid_quality": 0,
+          "best_assignment": null,
+          "transpiled_depth": 52,
+          "gate_counts": {
+            "rz": 211,
+            "sx": 138,
+            "cz": 72,
+            "x": 36,
+            "measure": 18
+          },
+          "job_id": "d7ak5orc6das739kc8i0"
+        }
+      }
+    }
+  },
+  "feasibility_decoding": {
+    "D_6q_ibm_fez": {
+      "original_valid_rate": 0.2415,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.7585,
+      "original_best_cost": 0.0,
+      "decoded_best_cost": 0.0,
+      "original_mean_cost": 0.27303600000000006,
+      "decoded_mean_cost": 2.23812575,
+      "original_quality": 0.0,
+      "decoded_quality": 0.0,
+      "decoded_mean_quality": 0.6325
+    },
+    "D_6q_ibm_kingston": {
+      "original_valid_rate": 0.25675,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.74325,
+      "original_best_cost": 0.0,
+      "decoded_best_cost": 0.0,
+      "original_mean_cost": 0.30616150000000003,
+      "decoded_mean_cost": 2.1142250000000002,
+      "original_quality": 0.0,
+      "decoded_quality": 0.0,
+      "decoded_mean_quality": 0.627125
+    },
+    "D_6q_ibm_marrakesh": {
+      "original_valid_rate": 0.25525,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.74475,
+      "original_best_cost": 0.0,
+      "decoded_best_cost": 0.0,
+      "original_mean_cost": 0.29737300000000005,
+      "decoded_mean_cost": 2.3203987500000003,
+      "original_quality": 0.0,
+      "decoded_quality": 0.0,
+      "decoded_mean_quality": 0.64725
+    },
+    "D_12q_ibm_fez": {
+      "original_valid_rate": 0.24825,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.75175,
+      "original_best_cost": 0.66475,
+      "decoded_best_cost": 0.24,
+      "original_mean_cost": 1.5932629375,
+      "decoded_mean_cost": 5.3681098125,
+      "original_quality": 0.25,
+      "decoded_quality": 0.25,
+      "decoded_mean_quality": 0.37625
+    },
+    "D_12q_ibm_kingston": {
+      "original_valid_rate": 0.24875,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.75125,
+      "original_best_cost": 0.66475,
+      "decoded_best_cost": 0.0,
+      "original_mean_cost": 1.4227435624999998,
+      "decoded_mean_cost": 4.9422696875000005,
+      "original_quality": 0.25,
+      "decoded_quality": 0.0,
+      "decoded_mean_quality": 0.3606875
+    },
+    "D_12q_ibm_marrakesh": {
+      "original_valid_rate": 0.23925,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.76075,
+      "original_best_cost": 0.66475,
+      "decoded_best_cost": 0.0,
+      "original_mean_cost": 1.537013375,
+      "decoded_mean_cost": 5.5491525625,
+      "original_quality": 0.25,
+      "decoded_quality": 0.0,
+      "decoded_mean_quality": 0.384875
+    },
+    "D_18q_ibm_fez": {
+      "original_valid_rate": 0.00925,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.99075,
+      "original_best_cost": 1.59,
+      "decoded_best_cost": 0.027,
+      "original_mean_cost": 2.1723035,
+      "decoded_mean_cost": 5.1694548125,
+      "original_quality": 0.16666666666666666,
+      "decoded_quality": 0.16666666666666666,
+      "decoded_mean_quality": 0.3605
+    },
+    "D_18q_ibm_kingston": {
+      "original_valid_rate": 0.0135,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.9865,
+      "original_best_cost": 1.59,
+      "decoded_best_cost": 0.24,
+      "original_mean_cost": 2.0772378125000004,
+      "decoded_mean_cost": 4.325415812499999,
+      "original_quality": 0.16666666666666666,
+      "decoded_quality": 0.3333333333333333,
+      "decoded_mean_quality": 0.3402916666666666
+    },
+    "D_18q_ibm_marrakesh": {
+      "original_valid_rate": 0.00975,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.99025,
+      "original_best_cost": 1.331,
+      "decoded_best_cost": 0.027,
+      "original_mean_cost": 2.00223575,
+      "decoded_mean_cost": 4.1071408125,
+      "original_quality": 0.3333333333333333,
+      "decoded_quality": 0.16666666666666666,
+      "decoded_mean_quality": 0.33579166666666665
+    },
+    "E_6q_warmstart": {
+      "original_valid_rate": 0.2395,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.7605,
+      "original_best_cost": 0.0,
+      "decoded_best_cost": 0.0,
+      "original_mean_cost": 0.32132325,
+      "decoded_mean_cost": 1.8133802500000002,
+      "original_quality": 0.0,
+      "decoded_quality": 0.0,
+      "decoded_mean_quality": 0.59975
+    },
+    "E_12q_warmstart": {
+      "original_valid_rate": 0.00025,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 0.99975,
+      "original_best_cost": 1.16375,
+      "decoded_best_cost": 0.24,
+      "original_mean_cost": 0.979708625,
+      "decoded_mean_cost": 10.291459687500003,
+      "original_quality": 0.25,
+      "decoded_quality": 0.25,
+      "decoded_mean_quality": 0.6066875
+    },
+    "E_18q_warmstart": {
+      "original_valid_rate": 0.0,
+      "decoded_valid_rate": 1.0,
+      "valid_rate_improvement": 1.0,
+      "original_best_cost": null,
+      "decoded_best_cost": 0.267,
+      "original_mean_cost": 2.0437124375,
+      "decoded_mean_cost": 15.171485437500001,
+      "original_quality": 0,
+      "decoded_quality": 0.3333333333333333,
+      "decoded_mean_quality": 0.616875
+    }
+  }
+}
